@@ -60,6 +60,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/taglist.vim'
+
+Plug 'tpope/vim-fugitive'
+
 " TODO: enable only filetype using def and end
 Plug 'tpope/vim-endwise'
 " TODO: move to filetype setting
