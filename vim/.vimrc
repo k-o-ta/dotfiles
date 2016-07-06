@@ -30,9 +30,14 @@ set backspace=indent,eol,start
 
 set smartindent
 
-"prevent indent when paste
+""""setting for copy and paste""""""""""""""""""""""""""""""""""""""""""""""""
+" use clipboard when yank
+set clipboard=unnamed,autoselect
+
+" prevent indent when paste
 imap <F5> <nop>
 set pastetoggle=<F5>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " amount of spaces inerted automatically
 set shiftwidth=2
