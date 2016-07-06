@@ -50,48 +50,36 @@ set autoread
 " filetype off
 
 call plug#begin('~/.vim/plugged')
-" set color thema
-Plug 'tomasr/molokai'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" caution! can't back by [ESC]
-Plug 'Townk/vim-autoclose'
-Plug 'tomtom/tcomment_vim'
-Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'Shougo/neocomplete.vim'
-Plug 'scrooloose/syntastic'
-Plug 'vim-scripts/taglist.vim'
+  " set color thema
+  Plug 'tomasr/molokai'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " caution! can't back by [ESC]
+  Plug 'Townk/vim-autoclose'
+  Plug 'tomtom/tcomment_vim'
+  Plug 'nathanaelkane/vim-indent-guides'
+  " Plug 'Shougo/neocomplete.vim'
+  Plug 'scrooloose/syntastic'
+  Plug 'vim-scripts/taglist.vim'
 
-Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
 
-" TODO: enable only filetype using def and end
-Plug 'tpope/vim-endwise'
-" TODO: move to filetype setting
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+  " TODO: enable only filetype using def and end
+  Plug 'tpope/vim-endwise'
+
+  " Rust plugin
+  Plug 'rust-lang/rust.vim'
+  Plug 'racer-rust/vim-racer'
 call plug#end()
 
 " alias to show nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
+" alias to ctags
+nnoremap <C-]> g<C-]>
+
 " set indent color
 let g:indent_guides_enable_on_vim_startup = 1
-
-" TODO: move to filetype setting
-" TODO: I don't know why ftplugin isn't loaded automatically
-:source ~/.vim/plugged/rust.vim/ftplugin/rust.vim
-let g:rustfmt_autosave = 1
-let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-
-" setting of racer
-set hidden
-" let g:racer_cmd = "$HOME/.cargo/bin/racer"
-let g:racer_cmd = "/Users/koji/.cargo/bin/racer"
-let $RUST_SRC_PATH="/usr/local/src/rustc-1.5.0/src"
-
-setlocal tags=./rusty-tags.vi;/
-autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
-nnoremap <C-]> g<C-]>
 
 " sytastic_check
 let g:syntastic_mode_map = { 'mode': 'active',
