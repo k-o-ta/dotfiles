@@ -11,7 +11,7 @@ let $RUST_SRC_PATH="/usr/local/src/rustc-1.5.0/src"
 
 setlocal tags=./rusty-tags.vi;/
 " TODO: disable when there is no Cargo.toml
-autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&"
+autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " alias to run rustc
 nnoremap <silent><F10>  :RustRun<CR>
