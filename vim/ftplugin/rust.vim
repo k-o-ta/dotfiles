@@ -7,11 +7,13 @@ let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 set hidden
 " let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_cmd = "/Users/koji/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/usr/local/src/rustc-1.5.0/src"
 
 setlocal tags=./rusty-tags.vi;/
 " TODO: disable when there is no Cargo.toml
-autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&" | redraw!
+" autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " alias to run rustc
-nnoremap <silent><F10>  :RustRun<CR>
+nnoremap <silent><F10>  :RustRun input<CR>
+nnoremap <silent><F9>  :RustRun<CR>
