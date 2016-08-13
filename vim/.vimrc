@@ -59,7 +59,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   " caution! can't back by [ESC]
-  Plug 'Townk/vim-autoclose'
+  " Plug 'Townk/vim-autoclose'
+  Plug 'cohama/lexima.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'nathanaelkane/vim-indent-guides'
   " Plug 'Shougo/neocomplete.vim'
@@ -75,6 +76,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'rust-lang/rust.vim'
   Plug 'racer-rust/vim-racer'
 call plug#end()
+
+let g:rustfmt_autosave = 1
 
 " alias to show nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>

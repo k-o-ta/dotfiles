@@ -181,4 +181,4 @@ if [[ -s ~/.nvm/nvm.sh ]];
 fi
 
 # racerの設定
-export RUST_SRC_PATH=/usr/local/src/rustc-1.5.0/src
+export RUST_SRC_PATH=/usr/local/src/rust/src
