@@ -57,6 +57,8 @@ set autoread
 call plug#begin('~/.vim/plugged')
   " set color thema
   Plug 'tomasr/molokai'
+  " remove trailing whitespace
+  Plug 'bronson/vim-trailing-whitespace'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   " caution! can't back by [ESC]
   " Plug 'Townk/vim-autoclose'
