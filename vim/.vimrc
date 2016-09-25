@@ -65,6 +65,7 @@ call plug#begin('~/.vim/plugged')
   " file search
   Plug 'Shougo/vimproc.vim'
   Plug 'Shougo/unite.vim'
+  Plug 'rking/ag.vim'
 
   " caution! can't back by [ESC]
   " Plug 'Townk/vim-autoclose'
