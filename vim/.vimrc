@@ -80,6 +80,9 @@ call plug#begin('~/.vim/plugged')
   " TODO: enable only filetype using def and end
   Plug 'tpope/vim-endwise'
 
+  " git plugin
+  Plug 'airblade/vim-gitgutter'
+
   " Rust plugin
   Plug 'rust-lang/rust.vim'
   Plug 'racer-rust/vim-racer'
