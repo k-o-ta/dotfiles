@@ -1,6 +1,2 @@
-export PATH="$PATH:$HOME/.multirust/toolchains/nightly/cargo/bin"
-export PATH="$PATH:$HOME/.multirust/toolchains/nightly/cargo/bin/cargo-fmt"
-export PATH="$PATH:$HOME/.multirust/toolchains/nightly/cargo/bin/rustfmt"
-export PATH="$PATH:$HOME/.multirust/toolchains/nightly/cargo/bin/rusty-tags"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cargo/bin/racer"
