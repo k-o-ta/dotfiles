@@ -87,7 +87,13 @@ call plug#begin('~/.vim/plugged')
   " Rust plugin
   Plug 'rust-lang/rust.vim'
   Plug 'racer-rust/vim-racer'
+
+  " org-mode plugin
+  Plug 'tpope/vim-speeddating'
+  Plug 'jceb/vim-orgmode'
 call plug#end()
+
+" :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
 
 let g:rustfmt_autosave = 1
 
