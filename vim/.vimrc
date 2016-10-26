@@ -11,6 +11,9 @@ set hlsearch
 " show row number
 set number
 
+" prevent auto CR
+let g:org_tag_column = 0
+
 " show title on window
 set title
 
