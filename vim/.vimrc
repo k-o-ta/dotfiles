@@ -175,3 +175,9 @@ endtry
 nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
 :nnoremap <space>r <Plug>(unite_restart)
+
+" window resize shortcut
+nnoremap sl :vertical resize +5<cr>
+nnoremap sh :vertical resize -5<cr>
+nnoremap sk :resize -5<cr>
+nnoremap sj :resize +5<cr>
