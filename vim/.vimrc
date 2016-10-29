@@ -32,9 +32,7 @@ set backspace=indent,eol,start
 " filetype plugin indent on
 
 set smartindent
-
-""""setting for copy and paste""""""""""""""""""""""""""""""""""""""""""""""""
-" use clipboard when yank
+""""setting for copy and paste"""""""""""""""""""""""""""""""""""""""""""""""" " use clipboard when yank
 set clipboard=unnamed,autoselect
 
 " prevent indent when paste
@@ -181,3 +179,9 @@ nnoremap sl :vertical resize +5<cr>
 nnoremap sh :vertical resize -5<cr>
 nnoremap sk :resize -5<cr>
 nnoremap sj :resize +5<cr>
+
+" vim-indent-guides
+let g:indent_guides_auto_colors=0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
