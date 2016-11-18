@@ -76,6 +76,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/syntastic'
   Plug 'vim-scripts/taglist.vim'
 
+  " snippete
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+
   Plug 'tpope/vim-fugitive'
 
   " TODO: enable only filetype using def and end
@@ -206,3 +210,27 @@ call lexima#add_rule({'char': '<C-h>', 'at': '{ \%# }', 'delete': 1})
 call lexima#add_rule({'char': '<C-h>', 'at': '\[ \%# ]', 'delete': 1})
 call lexima#add_rule({'char': '<C-h>', 'at': '"\%#"', 'delete': 1})
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""setting for snippet""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/snippets/,~/.vim/snippets'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
