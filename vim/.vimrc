@@ -85,6 +85,9 @@ call plug#begin('~/.vim/plugged')
   " git plugin
   Plug 'airblade/vim-gitgutter'
 
+  " quickrun
+  Plug 'thinca/vim-quickrun'
+
   " Rust plugin
   Plug 'rust-lang/rust.vim'
   Plug 'racer-rust/vim-racer'
