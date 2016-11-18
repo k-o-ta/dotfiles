@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'cohama/lexima.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'nathanaelkane/vim-indent-guides'
-  " Plug 'Shougo/neocomplete.vim'
+  Plug 'Shougo/neocomplete.vim'
   Plug 'scrooloose/syntastic'
   Plug 'vim-scripts/taglist.vim'
 
