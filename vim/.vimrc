@@ -79,7 +79,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
 
   " TODO: enable only filetype using def and end
-  Plug 'tpope/vim-endwise'
+  " TODO: conflict with vim-endwise
+  " Plug 'tpope/vim-endwise'
 
   " git plugin
   Plug 'airblade/vim-gitgutter'
@@ -187,3 +188,21 @@ let g:indent_guides_auto_colors=0
 let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
+
+""""setting for lexima.vim""""""""""""""""""""""""""""""""""""""""""""""""
+call lexima#add_rule({'char': '<C-h>', 'at': '(\%#)', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '(\%#)', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '{\%#}', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '\[\%#\]', 'delete': 1})
+
+call lexima#add_rule({'char': '<C-h>', 'at': '"\%#"', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '"""\%#"""""""', 'input': '<C-h><C-h><C-h>', 'delete': 3})
+call lexima#add_rule({'char': '<C-h>', 'at': "'''\\%#'''''''", 'input': '<C-h><C-h><C-h>', 'delete': 3})
+call lexima#add_rule({'char': '<C-h>', 'at': '`\%#`', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '```\%#```````', 'input': '<C-h><C-h><C-h>', 'delete': 3})
+
+call lexima#add_rule({'char': '<C-h>', 'at': '( \%# )', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '{ \%# }', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '\[ \%# ]', 'delete': 1})
+call lexima#add_rule({'char': '<C-h>', 'at': '"\%#"', 'delete': 1})
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

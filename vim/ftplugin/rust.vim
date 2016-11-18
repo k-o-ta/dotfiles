@@ -16,26 +16,6 @@ autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h
 " setting of lexima not to complete lifetime
 call lexima#add_rule({'char': "'", 'input_after': "", 'filetype': 'rust'})
 
-" TODO move to vimrc
-""""setting for lexima.vim""""""""""""""""""""""""""""""""""""""""""""""""
-call lexima#add_rule({'char': '<C-h>', 'at': '(\%#)', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '(\%#)', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '{\%#}', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '\[\%#\]', 'delete': 1})
-
-call lexima#add_rule({'char': '<C-h>', 'at': '"\%#"', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '"""\%#"""""""', 'input': '<C-h><C-h><C-h>', 'delete': 3})
-call lexima#add_rule({'char': '<C-h>', 'at': "'''\\%#'''''''", 'input': '<C-h><C-h><C-h>', 'delete': 3})
-call lexima#add_rule({'char': '<C-h>', 'at': '`\%#`', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '```\%#```````', 'input': '<C-h><C-h><C-h>', 'delete': 3})
-
-call lexima#add_rule({'char': '<C-h>', 'at': '( \%# )', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '{ \%# }', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '\[ \%# ]', 'delete': 1})
-call lexima#add_rule({'char': '<C-h>', 'at': '"\%#"', 'delete': 1})
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " alias to run rustc
 nnoremap <silent><F10>  :RustRun input<CR>
 nnoremap <silent><F9>  :RustRun<CR>
