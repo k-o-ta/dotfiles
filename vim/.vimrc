@@ -43,10 +43,9 @@ set pastetoggle=<F5>
 " amount of spaces inerted automatically
 set shiftwidth=2
 
-" stop pasting after using x, d, D
-nnoremap x "_x
-nnoremap d "_d
-nnoremap D "_D
+" vim window setting
+nnoremap <C-w>o <C-w>w
+nnoremap <C-w><C-o> <C-w><C-w>
 
 " file setting
 " set hidden
