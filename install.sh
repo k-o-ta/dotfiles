@@ -6,4 +6,5 @@ mkdir -p ~/.vim/snippets
 ln -sf ~/dotfiles/vim/ftplugin/rust.vim ~/.vim/ftplugin/rust.vim
 ln -sf ~/dotfiles/vim/ftplugin/cpp.vim ~/.vim/ftplugin/cpp.vim
 ln -sf ~/dotfiles/vim/snippets/org.snip ~/.vim/snippets/org.snip
+ln -sf ~/dotfiles/vim/snippets/rust.snip ~/.vim/snippets/rust.snip
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
