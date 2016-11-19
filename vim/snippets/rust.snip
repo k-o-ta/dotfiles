@@ -21,6 +21,17 @@ snippet     procon_input
         }
 
         fn main() {
+            type Element = ${1:elem_type};
             let input = buf_read().unwrap();
-            ${1:code}
+            let mut input_vectors: Vec<Vec<Element>> = vec![];
+            for input_line in input {
+                let input_str: Vec<String> = input_line.split(' ').map(String::from).collect();
+                let mut input_vector: Vec<Element> = vec![];
+                for input_elem_str in input_str {
+                    let elem: Element = Element::from_str(input_elem_str.as_str()).unwrap();
+                    input_vector.push(elem);
+                }
+                input_vectors.push(input_vector);
+            }
+            ${2:code}
         }
