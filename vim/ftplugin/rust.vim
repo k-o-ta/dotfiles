@@ -10,8 +10,12 @@ let g:racer_experimental_completer = 1
 let $RUST_SRC_PATH="/usr/local/src/rust/src"
 
 setlocal tags=./rusty-tags.vi;/
-" TODO: disable when there is no Cargo.toml
-autocmd BufWrite *.rs :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&" | redraw!
+function! s:rusty_tags()
+  if findfile("Cargo.toml", ".;")
+    :silent exec "!rusty-tags vi --start-dir=" . expand('%:p:h') . "&" | redraw!
+  endif
+endfunction
+autocmd BufWrite *.rs :call s:rusty_tags()
 
 " setting of lexima not to complete lifetime
 call lexima#add_rule({'char': "'", 'input_after': "", 'filetype': 'rust'})
