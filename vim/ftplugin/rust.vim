@@ -21,5 +21,5 @@ autocmd BufWrite *.rs :call s:rusty_tags()
 call lexima#add_rule({'char': "'", 'input_after': "", 'filetype': 'rust'})
 
 " alias to run rustc
-nnoremap <silent><F10>  :RustRun input<CR>
+nnoremap <silent><F10>  :RustRun! --cfg local<CR>
 nnoremap <silent><F9>  :RustRun<CR>
