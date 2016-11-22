@@ -1,0 +1,14 @@
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = auto
+[alias]
+    alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+    s  = status
+    c  = commit
+    d = diff
+    co = checkout
+    ss = status -s
+    sh = show
+    pl = log --graph --branches --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
