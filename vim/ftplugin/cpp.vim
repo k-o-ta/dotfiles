@@ -1,3 +1,4 @@
+call lexima#add_rule({'char': '<C-h>', 'at': "'\\%#'", 'delete': 1})
 if executable("clang++")
   let g:syntastic_cpp_compiler = 'clang++'
   let g:syntastic_cpp_compiler_options = '-std=c++11 --stdlib=libc++'
