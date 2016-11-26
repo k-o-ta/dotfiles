@@ -182,3 +182,6 @@ fi
 
 # racerの設定
 export RUST_SRC_PATH=/usr/local/src/rust/src
+
+# ocaml
+alias ocaml="rlwrap ocaml"

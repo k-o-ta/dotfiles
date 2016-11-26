@@ -1,6 +1,7 @@
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.ocamlinit ~/.ocamlinit
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 mkdir -p ~/.vim/ftplugin
 mkdir -p ~/.vim/snippets
