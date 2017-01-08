@@ -92,6 +92,9 @@ call plug#begin('~/.vim/plugged')
   " quickrun
   Plug 'thinca/vim-quickrun'
 
+  " clang plugin
+  Plug 'rhysd/vim-clang-format'
+
   " Rust plugin
   Plug 'rust-lang/rust.vim'
   Plug 'racer-rust/vim-racer'
