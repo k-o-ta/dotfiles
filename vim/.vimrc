@@ -237,3 +237,7 @@ endif
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/snippets/,~/.vim/snippets'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" os depending setting
+if has('unix')
+  runtime! userautoload/*.vim
+endif

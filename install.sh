@@ -5,9 +5,11 @@ ln -sf ~/dotfiles/.ocamlinit ~/.ocamlinit
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 mkdir -p ~/.vim/ftplugin
 mkdir -p ~/.vim/snippets
+mkdir -p ~/.vim/userautoload
 ln -sf ~/dotfiles/vim/ftplugin/rust.vim ~/.vim/ftplugin/rust.vim
 ln -sf ~/dotfiles/vim/ftplugin/c.vim ~/.vim/ftplugin/c.vim
 ln -sf ~/dotfiles/vim/ftplugin/cpp.vim ~/.vim/ftplugin/cpp.vim
 ln -sf ~/dotfiles/vim/snippets/org.snip ~/.vim/snippets/org.snip
 ln -sf ~/dotfiles/vim/snippets/rust.snip ~/.vim/snippets/rust.snip
+ln -sf ~/dotfiles/vim/userautoload/unix.vim ~/.vim/userautoload/unix.vim
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
