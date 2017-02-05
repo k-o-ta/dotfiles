@@ -94,6 +94,7 @@ call plug#begin('~/.vim/plugged')
 
   " clang plugin
   Plug 'rhysd/vim-clang-format'
+  Plug 'justmao945/vim-clang'
 
   " Rust plugin
   Plug 'rust-lang/rust.vim'
