@@ -6,7 +6,7 @@ call lexima#add_rule({'char': '<C-h>', 'at': "'\\%#'", 'delete': 1})
 let g:clang_enable_format_command = 0
 let g:clang_format#detect_style_file = 1
 function! s:clang_format()
-  if !findfile(".clang-format-inhibitter", ".;")
+  if findfile(".clang-format-inhibitter", ".;") == ""
     :ClangFormat
   endif
 endfunction
