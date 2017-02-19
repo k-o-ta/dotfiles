@@ -1,8 +1,14 @@
 call lexima#add_rule({'char': '<C-h>', 'at': "'\\%#'", 'delete': 1})
 
+" Because of command name conflict 'ClanFormat', I stop using vim-clang's ClangFormat, which run clang-format without style=file option
+" I can also use vim-clang's ClangFormat using option style=file, but I use vim-clang-format, because I'd like to use another use full function of vim-clan-format
+" If I stop using vim-clang-format, I can remove this odd setting.
+let g:clang_enable_format_command = 0
+let g:clang_format#detect_style_file = 1
 function! s:clang_format()
-  let l:lines="all"
-  :pyf /usr/local/Cellar/clang-format/2016-08-03/share/clang/clang-format.py
+  if !findfile(".clang-format-inhibitter", ".;")
+    :ClangFormat
+  endif
 endfunction
 autocmd BufWrite *.cpp :call s:clang_format()
 
