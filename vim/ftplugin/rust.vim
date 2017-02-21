@@ -1,7 +1,13 @@
 " TODO: I don't know why ftplugin isn't loaded automatically
 :source ~/.vim/plugged/rust.vim/ftplugin/rust.vim
-" let g:rustfmt_autosave = 1
+
+" setting of rustfmt
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+if findfile(".rustfmt-inhibitter", ".;")
+  let g:rustfmt_autosave = 0
+else
+  let g:rustfmt_autosave = 1
+endif
 
 " setting of racer
 set hidden
