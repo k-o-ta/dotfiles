@@ -240,3 +240,7 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/snippets
 if has('unix')
   runtime! userautoload/*.vim
 endif
+
+set wildmode=longest:full,full
+" vim command alias
+:command Bookmark Unite bookmark
