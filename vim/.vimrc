@@ -64,7 +64,7 @@ call plug#begin('~/.vim/plugged')
 
   " file search
   Plug 'Shougo/vimproc.vim'
-  Plug 'Shougo/unite.vim'
+  Plug 'bon-chi/unite.vim', { 'branch': 'enable_default_bookmark_name' }
   Plug 'rking/ag.vim'
 
   " caution! can't back by [ESC]
@@ -240,6 +240,9 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/snippets
 if has('unix')
   runtime! userautoload/*.vim
 endif
+
+" bookmark setting
+let g:default_bookmark_name = split(getcwd(), '/')[-1]
 
 set wildmode=longest:full,full
 " vim command alias
