@@ -243,4 +243,5 @@ endif
 
 set wildmode=longest:full,full
 " vim command alias
-:command Bookmark Unite bookmark
+command Bookmark exec("Unite bookmark:" . split(getcwd(), '/')[-1])
+command Add UniteBookmarkAdd
