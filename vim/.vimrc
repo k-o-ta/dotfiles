@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'cohama/lexima.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'nathanaelkane/vim-indent-guides'
-  Plug 'Shougo/neocomplete.vim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'scrooloose/syntastic'
   Plug 'vim-scripts/taglist.vim'
 
@@ -164,9 +164,8 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 
-" setting of neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_at_startup = 1
+" setting of deopelete
+let g:deoplete#enable_at_startup = 1
 
 " let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
