@@ -1,5 +1,6 @@
 " TODO: I don't know why ftplugin isn't loaded automatically
-:source ~/.vim/plugged/rust.vim/ftplugin/rust.vim
+" if needed uncomment out
+" :source ~/.vim/plugged/rust.vim/ftplugin/rust.vim
 
 " setting of rustfmt
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
