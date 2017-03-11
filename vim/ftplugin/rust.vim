@@ -36,3 +36,5 @@ nmap gs <Plug>(rust-def-split)
 nmap gx <Plug>(rust-def-vertical)
 nmap <leader>gd <Plug>(rust-doc)
 
+" rust language server setting
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

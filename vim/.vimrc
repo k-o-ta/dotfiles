@@ -103,6 +103,9 @@ call plug#begin('~/.vim/plugged')
   " org-mode plugin
   Plug 'tpope/vim-speeddating'
   Plug 'jceb/vim-orgmode'
+
+  " language server
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
@@ -247,3 +250,9 @@ set wildmode=longest:full,full
 " vim command alias
 command Bookmark exec("Unite bookmark:" . split(getcwd(), '/')[-1])
 command Add UniteBookmarkAdd
+
+" rust language server setting
+" TODO move to rust.vim
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['cargo', 'run', '--release', "--manifest-path=".$HOME."/.rls/Cargo.toml"],
+    \ }
