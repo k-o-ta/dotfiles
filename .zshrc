@@ -170,10 +170,16 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # esc後の反応が遅いのを速くする
 KEYTIMEOUT=1
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-# use absolute path?
-export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+case ${OSTYPE} in
+  darwin*)
+    export DOCKER_HOST=tcp://192.168.59.103:2376
+    # use absolute path?
+    export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
+    ;;
+  linux*)
+    ;;
+esac
 
 #export PATH=/usr/local/bin:/usr/bin
 if [[ -s ~/.nvm/nvm.sh ]];
