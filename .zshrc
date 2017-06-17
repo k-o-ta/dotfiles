@@ -191,3 +191,7 @@ export RUST_SRC_PATH=/usr/local/src/rust/src
 
 # ocaml
 alias ocaml="rlwrap ocaml"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR=$HOME/.sdkman
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
