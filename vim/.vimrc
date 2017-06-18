@@ -33,7 +33,7 @@ set backspace=indent,eol,start
 
 set smartindent
 """"setting for copy and paste"""""""""""""""""""""""""""""""""""""""""""""""" " use clipboard when yank
-set clipboard=unnamed,autoselect
+set clipboard+=unnamedplus
 
 " prevent indent when paste
 imap <F5> <nop>
