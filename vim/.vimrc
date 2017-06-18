@@ -256,3 +256,5 @@ command Add UniteBookmarkAdd
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['cargo', 'run', '--release', "--manifest-path=".$HOME."/.rls/Cargo.toml"],
     \ }
+" json's duble quote
+set conceallevel=0
