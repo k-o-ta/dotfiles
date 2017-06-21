@@ -30,3 +30,11 @@ call lexima#add_rule({'char': "'", 'input_after': "", 'filetype': 'rust'})
 " alias to run rustc
 nnoremap <silent><F10>  :RustRun! --cfg local<CR>
 nnoremap <silent><F9>  :RustRun<CR>
+
+nmap gd <Plug>(rust-def)
+nmap gs <Plug>(rust-def-split)
+nmap gx <Plug>(rust-def-vertical)
+nmap <leader>gd <Plug>(rust-doc)
+
+" rust language server setting
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

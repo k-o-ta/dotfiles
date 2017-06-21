@@ -33,7 +33,7 @@ set backspace=indent,eol,start
 
 set smartindent
 """"setting for copy and paste"""""""""""""""""""""""""""""""""""""""""""""""" " use clipboard when yank
-set clipboard=unnamed,autoselect
+set clipboard+=unnamedplus
 
 " prevent indent when paste
 imap <F5> <nop>
@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'cohama/lexima.vim'
   Plug 'tomtom/tcomment_vim'
   Plug 'nathanaelkane/vim-indent-guides'
-  Plug 'Shougo/neocomplete.vim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'scrooloose/syntastic'
   Plug 'vim-scripts/taglist.vim'
 
@@ -103,6 +103,9 @@ call plug#begin('~/.vim/plugged')
   " org-mode plugin
   Plug 'tpope/vim-speeddating'
   Plug 'jceb/vim-orgmode'
+
+  " language server
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
@@ -164,9 +167,8 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 
-" setting of neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_at_startup = 1
+" setting of deopelete
+let g:deoplete#enable_at_startup = 1
 
 " let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -248,3 +250,11 @@ set wildmode=longest:full,full
 " vim command alias
 command Bookmark exec("Unite bookmark:" . split(getcwd(), '/')[-1])
 command Add UniteBookmarkAdd
+
+" rust language server setting
+" TODO move to rust.vim
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['cargo', 'run', '--release', "--manifest-path=".$HOME."/.rls/Cargo.toml"],
+    \ }
+" json's duble quote
+set conceallevel=0
