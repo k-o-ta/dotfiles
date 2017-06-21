@@ -185,3 +185,5 @@ export RUST_SRC_PATH=/usr/local/src/rust/src
 
 # ocaml
 alias ocaml="rlwrap ocaml"
+
+alias tmux="TERM=screen-256color-bce tmux"
