@@ -104,6 +104,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-speeddating'
   Plug 'jceb/vim-orgmode'
 
+  " markdown plugin
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+
   " language server
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
@@ -258,3 +262,6 @@ let g:LanguageClient_serverCommands = {
     \ }
 " json's duble quote
 set conceallevel=0
+
+" md as markdown
+autocmd BufRead,BufNewFile *.md  set filetype=markdown
