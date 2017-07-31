@@ -127,6 +127,9 @@ alias l1="ls -1"
 # tree
 alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 
+# vim
+alias vim="nvim"
+
 
 # -------------------------------------
 # キーバインド
