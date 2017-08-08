@@ -107,6 +107,7 @@ call plug#begin('~/.vim/plugged')
   " markdown plugin
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
+  let g:vim_markdown_folding_disabled = 1
 
   " language server
   Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
