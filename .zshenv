@@ -5,6 +5,8 @@ export DYLD_LIBRARY_PATH="$HOME/.rustup/toolchains/nightly-x86_64-apple-darwin/l
 export LD_LIBRARY_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib"
 export RLS_ROOT="$HOME/.rls/target/release"
 
+export PATH="$PATH:$HOME/development/scripts/target/release"
+
 export GOPATH=$HOME/development/go
 export PATH=$PATH:$GOPATH/bin
 
