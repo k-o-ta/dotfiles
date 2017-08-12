@@ -120,6 +120,8 @@ call plug#end()
 " alias to show nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
+let NERDTreeMapOpenVSplit='v'
+let NERDTreeMapOpenSplit='h'
 
 " alias to ctags
 nnoremap <C-]> g<C-]>
