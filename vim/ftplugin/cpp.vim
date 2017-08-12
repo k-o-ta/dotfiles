@@ -23,3 +23,4 @@ if executable("clang++")
   let g:quickrun_config['cpp'] = {'type': 'cpp/clang++11'}
 endif
 
+nmap gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>

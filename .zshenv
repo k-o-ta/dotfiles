@@ -7,6 +7,8 @@ export RLS_ROOT="$HOME/.rls/target/release"
 
 export PATH="$PATH:$HOME/development/scripts/target/release"
 
+export PATH="$PATH:$HOME/rtags/bin"
+
 export GOPATH=$HOME/development/go
 export PATH=$PATH:$GOPATH/bin
 
