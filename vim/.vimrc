@@ -198,6 +198,9 @@ nnoremap sh :vertical resize -5<cr>
 nnoremap sk :resize -5<cr>
 nnoremap sj :resize +5<cr>
 
+" leader key
+let mapleader = "\<Space>"
+
 " vim-indent-guides
 let g:indent_guides_auto_colors=0
 let g:indent_guides_guide_size = 1

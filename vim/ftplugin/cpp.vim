@@ -24,3 +24,8 @@ if executable("clang++")
 endif
 
 nmap gd :call rtags#JumpTo(g:SAME_WINDOW)<CR>
+nmap gs :call rtags#JumpTo(g:H_SPLIT)<CR>
+nmap gx :call rtags#JumpTo(g:V_SPLIT)<CR>
+nmap <Leader>gt :call rtags#JumpTo(g:NEW_TAB)<CR>
+
+nmap gf :<C-u>Unite<Space>rtags/references<CR>
