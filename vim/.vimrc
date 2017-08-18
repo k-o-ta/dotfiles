@@ -266,7 +266,7 @@ command Add UniteBookmarkAdd
 " rust language server setting
 " TODO move to rust.vim
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['cargo', 'run', '--release', "--manifest-path=".$HOME."/.rls/Cargo.toml"],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 " json's duble quote
 set conceallevel=0
