@@ -118,7 +118,7 @@ call plug#end()
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
 
 " alias to show nerdtree
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <Space>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeMapOpenVSplit='v'
 let NERDTreeMapOpenSplit='h'
@@ -273,3 +273,4 @@ set conceallevel=0
 
 " md as markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
+let g:vim_markdown_new_list_item_indent = 2
