@@ -48,7 +48,7 @@ nnoremap <C-w>o <C-w>w
 nnoremap <C-w><C-o> <C-w><C-w>
 
 " file setting
-" set hidden
+set hidden
 set autoread
 
 " syntax on
@@ -77,8 +77,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/taglist.vim'
 
   " snippete
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
+  " Plug 'Shougo/neosnippet'
+  " Plug 'Shougo/neosnippet-snippets'
 
   Plug 'tpope/vim-fugitive'
 
@@ -112,7 +112,8 @@ call plug#begin('~/.vim/plugged')
   let g:vim_markdown_folding_disabled = 1
 
   " language server
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim'
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"

@@ -12,4 +12,7 @@ export GOPATH=$HOME/development/go
 export PATH=$PATH:$GOPATH/bin
 
 export PATH="$HOME/.ndenv/bin:$PATH"
+export PATH="$HOME/.ndenv/versions:$PATH"
+
+export PATH="$PATH:/home/koji/ssd_development/ssd2/depot_tools"
 eval "$(ndenv init -)" 
