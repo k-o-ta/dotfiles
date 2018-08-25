@@ -11,5 +11,9 @@ export PATH="$PATH:$HOME/rtags/bin"
 export GOPATH=$HOME/development/go
 export PATH=$PATH:$GOPATH/bin
 
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)" 
+eval "$(ndenv init -)"
