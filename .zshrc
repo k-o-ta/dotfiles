@@ -159,8 +159,12 @@ function title {
 }
 #~/.zprofileに書いたから不要
 # export PATH=~/usr/bin:$PATH
-# export PATH=$HOME/.rbenv/bin:$PATH
-# eval "$(rbenv init -)"
+
+# macだと.zshenv読み込み後の.zprofile読み込み時に/usr/libexec/path_helper -sが発行され
+# システムワイドにインストールされたrubyのパスが先頭に追加され優先的に使われてしまうので
+# .zprofileよりあとに読み込まれる.zshrcに設定している
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 if [ -d $HOME/bin ]
 then
   PATH=$PATH:$HOME/bin; export PATH
