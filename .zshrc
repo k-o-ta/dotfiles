@@ -159,8 +159,12 @@ function title {
 }
 #~/.zprofileに書いたから不要
 # export PATH=~/usr/bin:$PATH
-# export PATH=$HOME/.rbenv/bin:$PATH
-# eval "$(rbenv init -)"
+
+# macだと.zshenv読み込み後の.zprofile読み込み時に/usr/libexec/path_helper -sが発行され
+# システムワイドにインストールされたrubyのパスが先頭に追加され優先的に使われてしまうので
+# .zprofileよりあとに読み込まれる.zshrcに設定している
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
 if [ -d $HOME/bin ]
 then
   PATH=$PATH:$HOME/bin; export PATH
@@ -175,10 +179,6 @@ KEYTIMEOUT=1
 
 case ${OSTYPE} in
   darwin*)
-    export DOCKER_HOST=tcp://192.168.59.103:2376
-    # use absolute path?
-    export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
-    export DOCKER_TLS_VERIFY=1
     ;;
   linux*)
     ;;

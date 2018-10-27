@@ -54,6 +54,8 @@ set autoread
 " syntax on
 " filetype off
 
+autocmd ColorScheme * highlight Search ctermfg=15 ctermbg=21 guifg=wheat guibg=peru
+
 call plug#begin('~/.vim/plugged')
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
   " set color thema
@@ -65,6 +67,7 @@ call plug#begin('~/.vim/plugged')
   " file search
   Plug 'Shougo/vimproc.vim'
   Plug 'bon-chi/unite.vim', { 'branch': 'enable_default_bookmark_name' }
+  Plug 'Shougo/denite.nvim'
   Plug 'rking/ag.vim'
 
   " caution! can't back by [ESC]
@@ -110,6 +113,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'godlygeek/tabular'
   Plug 'plasticboy/vim-markdown'
   let g:vim_markdown_folding_disabled = 1
+
+  Plug 'ymyzk/vim-copl'
 
   " language server
   " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
@@ -191,7 +196,7 @@ catch
 endtry
 " search a file in the filetree
 " nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
-nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
+" nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
 :nnoremap <space>r <Plug>(unite_restart)
 
@@ -267,7 +272,7 @@ command Add UniteBookmarkAdd
 " rust language server setting
 " TODO move to rust.vim
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rls'],
     \ }
 " json's duble quote
 set conceallevel=0
@@ -300,3 +305,24 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
+
+" denite
+call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
+
+call denite#custom#var('file_rec', 'command',['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+
+" find
+" nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <space><space> :split<cr> :<C-u>Denite -auto_preview -mode=normal file_rec<cr>
+"grep
+" カーソル以下の単語をgrep
+nnoremap <silent> ;cg :<C-u>DeniteCursorWord -auto_preview -mode=normal grep -buffer-name=search line<CR><C-R><C-W><CR>
+" 普通にgrep
+nnoremap <silent> ;g :<C-u>Denite -auto_preview -mode=normal -buffer-name=search -mode=normal grep<CR>
+
