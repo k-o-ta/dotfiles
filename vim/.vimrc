@@ -80,8 +80,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/taglist.vim'
 
   " snippete
-  " Plug 'Shougo/neosnippet'
-  " Plug 'Shougo/neosnippet-snippets'
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
 
   Plug 'tpope/vim-fugitive'
 
@@ -117,8 +117,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ymyzk/vim-copl'
 
   " language server
-  " Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'autozimu/LanguageClient-neovim'
+  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
