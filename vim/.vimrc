@@ -62,7 +62,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
   " remove trailing whitespace
   Plug 'bronson/vim-trailing-whitespace'
+
+
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'majutsushi/tagbar'
+
 
   " file search
   Plug 'Shougo/vimproc.vim'
@@ -123,7 +127,7 @@ call plug#end()
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
 
 " alias to show nerdtree
-nnoremap <Space>n :NERDTreeToggle<CR>
+nnoremap <Space>n :NERDTreeToggle<CR>:TagbarToggle<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeMapOpenVSplit='v'
 let NERDTreeMapOpenSplit='h'
