@@ -29,3 +29,5 @@ nmap gx :call rtags#JumpTo(g:V_SPLIT)<CR>
 nmap <Leader>gt :call rtags#JumpTo(g:NEW_TAB)<CR>
 
 nmap gf :<C-u>Unite<Space>rtags/references<CR>
+noremap <[[> [[?^?s*$<CR>jz<CR>
+noremap <]]> /^?s*$<CR>]]?^?s*$<CR>jz<CR>
