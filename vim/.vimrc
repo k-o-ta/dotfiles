@@ -186,7 +186,7 @@ function! s:GetHighlight(hi)
 endfunction
 
 " setting of deopelete
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1 " skip vim intro
 
 " let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
