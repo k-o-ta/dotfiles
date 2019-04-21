@@ -4,7 +4,7 @@
 
 " setting of rustfmt
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-if findfile(".rustfmt-inhibitter", ".;")
+if findfile(".rustfmt-inhibitter", ".;") == '.rustfmt-inhibitter'
   let g:rustfmt_autosave = 0
 else
   let g:rustfmt_autosave = 1
