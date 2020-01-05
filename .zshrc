@@ -202,3 +202,5 @@ export SDKMAN_DIR=$HOME/.sdkman
 if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]];
   then [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
