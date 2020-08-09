@@ -127,7 +127,7 @@ call plug#end()
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
 
 " alias to show nerdtree
-nnoremap <Space>n :NERDTreeToggle<CR>:TagbarToggle<CR>
+nnoremap <Space>n :TagbarToggle<CR>:NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 let NERDTreeMapOpenVSplit='v'
 let NERDTreeMapOpenSplit='h'
