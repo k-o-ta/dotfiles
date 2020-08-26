@@ -11,22 +11,22 @@ snippet     procon_input
         use std::str::FromStr;
 
         #[allow(dead_code)]
-        fn read_line<T: FromStr, U: Read>(buf: &mut BufReader<U>) -> T
+        fn read_line<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> T
         where
             <T as FromStr>::Err: Debug,
         {
             let mut input = String::new();
-            let _ = buf.read_line(&mut input);
+            let _ = reader.read_line(&mut input);
             input.trim().parse().unwrap()
         }
 
         #[allow(dead_code)]
-        fn read_line_into_vec<T: FromStr, U: Read>(buf: &mut BufReader<U>) -> Vec<T>
+        fn read_line_into_vec<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> Vec<T>
         where
             <T as FromStr>::Err: Debug,
         {
             let mut input = String::new();
-            let _ = buf.read_line(&mut input);
+            let _ = reader.read_line(&mut input);
             input
                 .trim()
                 .split_whitespace()
@@ -35,12 +35,12 @@ snippet     procon_input
         }
 
         #[allow(dead_code)]
-        fn read_lines_to_end<T: FromStr, U: Read>(buf: &mut BufReader<U>) -> Vec<T>
+        fn read_lines_to_end<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> Vec<T>
         where
             <T as FromStr>::Err: Debug,
         {
             let mut input = String::new();
-            let _ = buf.read_to_string(&mut input);
+            let _ = reader.read_to_string(&mut input);
             input
                 .split_whitespace()
                 .map(|e| e.parse().unwrap())
@@ -48,12 +48,12 @@ snippet     procon_input
         }
 
         #[allow(dead_code)]
-        fn read_lines_to_end_into_vec<T: FromStr, U: Read>(buf: &mut BufReader<U>) -> Vec<Vec<T>>
+        fn read_lines_to_end_into_vec<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> Vec<Vec<T>>
         where
             <T as FromStr>::Err: Debug,
         {
             let mut input = String::new();
-            let _ = buf.read_to_string(&mut input);
+            let _ = reader.read_to_string(&mut input);
             input
                 .split_whitespace()
                 .map({
@@ -65,6 +65,18 @@ snippet     procon_input
                     }
                 })
                 .collect()
+        }
+        #[allow(dead_code)]
+        fn buff_write<T: Display>(writer: &mut BufWriter<StdoutLock>, output: &T) {
+            let _ = writeln!(writer, "{}", output);
+        }
+
+        #[allow(dead_code)]
+        fn vec_to_string<T: ToString>(vec: &Vec<T>) -> String {
+            vec.iter()
+                .map(|e| e.to_string())
+                .collect::<Vec<String>>()
+                .join(" ")
         }
 
         fn main() {
@@ -83,3 +95,9 @@ snippet     procon_input
 
             ${2:code}
         }
+
+
+snippet     procon_output
+        let out = stdout();
+        let mut out = BufWriter::new(out.lock());
+        ${1:code}
