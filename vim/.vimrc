@@ -121,7 +121,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ymyzk/vim-copl'
 
   " language server
-  Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
