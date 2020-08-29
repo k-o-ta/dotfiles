@@ -7,7 +7,11 @@ snippet     procon_input
         use std::io::Read;
 
         use std::fmt::Debug;
+        use std::fmt::Display;
+        use std::io::stdout;
         use std::io::BufReader;
+        use std::io::BufWriter;
+        use std::io::StdoutLock;
         use std::str::FromStr;
 
         #[allow(dead_code)]
@@ -55,17 +59,17 @@ snippet     procon_input
             let mut input = String::new();
             let _ = reader.read_to_string(&mut input);
             input
-                .split_whitespace()
+                .lines()
                 .map({
                     |line| {
-                        line.trim()
-                            .split_whitespace()
-                            .map(|e| e.parse().unwrap())
+                        line.split_whitespace()
+                            .map({ |e| e.parse().unwrap() })
                             .collect()
                     }
                 })
                 .collect()
         }
+
         #[allow(dead_code)]
         fn buff_write<T: Display>(writer: &mut BufWriter<StdoutLock>, output: &T) {
             let _ = writeln!(writer, "{}", output);
