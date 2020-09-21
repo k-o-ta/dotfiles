@@ -52,6 +52,27 @@ snippet     procon_input
         }
 
         #[allow(dead_code)]
+        fn read_line_into_optional_vec<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> Option<Vec<T>>
+        where
+            <T as FromStr>::Err: Debug,
+        {
+            let mut input = String::new();
+            let result = reader.read_line(&mut input).unwrap();
+            return if result == 0 {
+                None
+            } else {
+                Some(
+                    input
+                        .trim()
+                        .split_whitespace()
+                        .map(|e| e.parse().unwrap())
+                        .collect(),
+                )
+            };
+        }
+
+
+        #[allow(dead_code)]
         fn read_lines_to_end_into_vec<T: FromStr, U: Read>(reader: &mut BufReader<U>) -> Vec<Vec<T>>
         where
             <T as FromStr>::Err: Debug,
