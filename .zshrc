@@ -204,3 +204,4 @@ if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]];
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+eval "$(direnv hook zsh)"
