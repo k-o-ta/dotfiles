@@ -131,3 +131,7 @@ snippet     procon_output
         let out = stdout();
         let mut out = BufWriter::new(out.lock());
         ${1:code}
+
+snippet     procon_debug
+        #[cfg(local)]
+        dbg!(${1:code});
