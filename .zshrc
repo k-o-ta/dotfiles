@@ -197,6 +197,8 @@ alias ocaml="rlwrap ocaml"
 
 alias tmux="TERM=screen-256color-bce tmux"
 
+alias aws='docker run --rm -it -v ~/.aws:/root/.aws amazon/aws-cli'
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$HOME/.sdkman
 if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]];
