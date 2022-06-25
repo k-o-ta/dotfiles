@@ -70,7 +70,6 @@ call plug#begin('~/.vim/plugged')
 
   " file search
   Plug 'Shougo/vimproc.vim'
-  Plug 'bon-chi/unite.vim', { 'branch': 'enable_default_bookmark_name' }
   Plug 'Shougo/denite.nvim'
   Plug 'rking/ag.vim'
 
@@ -191,17 +190,6 @@ let g:deoplete#enable_at_startup = 1 " skip vim intro
 " let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-let g:unite_source_history_yank_enable = 1
-try
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
-catch
-endtry
-" search a file in the filetree
-" nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
-" nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
-" reset not it is <C-l> normally
-:nnoremap <space>r <Plug>(unite_restart)
 
 " window resize shortcut
 nnoremap sl :vertical resize +5<cr>
@@ -268,9 +256,6 @@ endif
 let g:default_bookmark_name = split(getcwd(), '/')[-1]
 
 set wildmode=longest:full,full
-" vim command alias
-command Bookmark exec("Unite bookmark:" . split(getcwd(), '/')[-1])
-command Add UniteBookmarkAdd
 
 " rust language server setting
 " TODO move to rust.vim
@@ -284,48 +269,45 @@ set conceallevel=0
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 let g:vim_markdown_new_list_item_indent = 2
 
-
-
-" insert modeで開始
-let g:unite_enable_start_insert = 1
-
-" 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" grep検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-" grep検索結果の再呼出
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
 " denite
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+endfunction
+
 call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>', 'noremap')
 
-call denite#custom#var('file_rec', 'command',['rg', '--files', '--glob', '!.git'])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('file/rec', 'command',['rg', '--files', '--glob', '!.git', '--color', 'never'])
+
+call denite#custom#var('grep', {
+	\ 'command': ['rg'],
+	\ 'default_opts': ['-i', '--vimgrep', '--no-heading'],
+	\ 'recursive_opts': [],
+	\ 'pattern_opt': ['--regexp'],
+	\ 'separator': ['--'],
+	\ 'final_opts': [],
+	\ })
+
+call denite#custom#option('search', {
+      \ 'auto_action': 'preview',
+      \ 'vertical_preview': v:true,
+      \ 'preview_width': float2nr(&columns * 0.4),
+      \ })
 
 " find
 " nnoremap <silent> <C-p> :<C-u>Denite file_rec<CR>
-nnoremap <space><space> :split<cr> :<C-u>Denite -auto_preview -mode=normal file_rec<cr>
+nnoremap <space><space> :split<cr> :<C-u>Denite -start-filter file/rec<cr>
 "grep
 " カーソル以下の単語をgrep
-nnoremap <silent> ;cg :<C-u>DeniteCursorWord -auto_preview -mode=normal grep -buffer-name=search line<CR><C-R><C-W><CR>
+nnoremap <silent> ;cg :<C-u>DeniteCursorWord grep -buffer-name=search<CR>
 " 普通にgrep
-nnoremap <silent> ;g :<C-u>Denite -auto_preview -mode=normal -buffer-name=search -mode=normal grep<CR>
+nnoremap <silent> ;g :<C-u>Denite grep -buffer-name=search<CR>
+" grep検索結果の再呼出
+nnoremap <silent> ;r  :<C-u>Denite -resume -buffer-name=search<CR>
 
