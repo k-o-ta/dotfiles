@@ -275,7 +275,7 @@ command Add UniteBookmarkAdd
 " rust language server setting
 " TODO move to rust.vim
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rls'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ }
 " json's duble quote
 set conceallevel=0
