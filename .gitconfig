@@ -1,6 +1,7 @@
 [core]
 	editor = nvim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore_global
+        hooksPath = ~/.config/git/hooks
 [color]
 	ui = auto
 [alias]
