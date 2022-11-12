@@ -60,6 +60,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'Shougo/vimproc.vim', {'do' : 'make'}
   " set color thema
   Plug 'tomasr/molokai'
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
   " remove trailing whitespace
   Plug 'bronson/vim-trailing-whitespace'
 
@@ -120,7 +121,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'ymyzk/vim-copl'
 
   " language server
-  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc-json', {'do': 'yarn install --immutable --immutable-cache'}
+  Plug 'neoclide/coc-tsserver', {'do': 'yarn install --immutable --immutable-cache'}
+  Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --immutable --immutable-cache'}
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
@@ -144,7 +148,15 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 
 syntax on
-colorscheme desert
+" colorscheme desert
+set cursorline
+colorscheme onehalflight
+let g:airline_theme='onehalfdark'
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 scriptencoding=utf-8
 " $BA^F~%b!<%I;~!"%9%F!<%?%9%i%$%s$N?'$rJQ99(B
@@ -258,10 +270,6 @@ let g:default_bookmark_name = split(getcwd(), '/')[-1]
 set wildmode=longest:full,full
 
 " rust language server setting
-" TODO move to rust.vim
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
 " json's duble quote
 set conceallevel=0
 

@@ -24,3 +24,4 @@ ln -sf ~/dotfiles/vim/ftplugin/cpp.vim ~/.config/nvim/ftplugin/cpp.vim
 ln -sf ~/dotfiles/vim/snippets/org.snip ~/.config/nvim/snippets/org.snip
 ln -sf ~/dotfiles/vim/snippets/rust.snip ~/.config/nvim/snippets/rust.snip
 ln -sf ~/dotfiles/vim/userautoload/unix.vim ~/.config/nvim/userautoload/unix.vim
+ln -sf ~/dotfiles/vim/coc/coc-settings.json ~/.config/nvim/coc-settings.json
