@@ -149,8 +149,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 syntax on
 " colorscheme desert
+" colorscheme molokai
 set cursorline
-colorscheme onehalflight
+colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
