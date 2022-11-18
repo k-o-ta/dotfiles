@@ -65,7 +65,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'bronson/vim-trailing-whitespace'
 
 
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'majutsushi/tagbar'
 
 
@@ -125,15 +125,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc-json', {'do': 'yarn install --immutable --immutable-cache'}
   Plug 'neoclide/coc-tsserver', {'do': 'yarn install --immutable --immutable-cache'}
   Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --immutable --immutable-cache'}
+  Plug 'weirongxu/coc-explorer', {'do': 'yarn install --immutable --immutable-cache'}
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
 
 " alias to show nerdtree
-nnoremap <Space>n :TagbarToggle<CR>:NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
-let NERDTreeMapOpenVSplit='v'
-let NERDTreeMapOpenSplit='h'
+" nnoremap <Space>n :TagbarToggle<CR>:NERDTreeToggle<CR>
+" let NERDTreeShowHidden = 1
+" let NERDTreeMapOpenVSplit='v'
+" let NERDTreeMapOpenSplit='h'
+
+" alias to show coc-explorer
+:nmap <space>n :TagbarToggle<CR>:<Cmd>CocCommand explorer<CR>
 
 " alias to ctags
 nnoremap <C-]> g<C-]>
