@@ -1,3 +1,15 @@
 {
-  "rust-analyzer.server.path": "~/my-application/cli/rust-analyzer"
+  "rust-analyzer.server.path": "~/my-application/cli/rust-analyzer",
+  "explorer.file.showHiddenFiles": true,
+  "explorer.openAction.for.directory": [
+    "expandable?",
+    ["expanded?", "collapse", "expand"],
+    "open"
+  ],
+  "explorer.keyMappings.global":{
+      "<cr>": "open",
+      "v": "open:vsplit",
+      "h": "open:split",
+      "x": "collapse"
+  }
 }

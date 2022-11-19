@@ -137,7 +137,7 @@ call plug#end()
 " let NERDTreeMapOpenSplit='h'
 
 " alias to show coc-explorer
-:nmap <space>n :TagbarToggle<CR>:<Cmd>CocCommand explorer<CR>
+nnoremap <space>n :TagbarToggle<CR>:<Cmd>CocCommand explorer<CR><CR>
 
 " alias to ctags
 nnoremap <C-]> g<C-]>
