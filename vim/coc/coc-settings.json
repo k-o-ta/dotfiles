@@ -10,6 +10,7 @@
       "<cr>": "open",
       "v": "open:vsplit",
       "h": "open:split",
-      "x": "collapse"
+      "x": "collapse",
+      "<s-c>": "cd"
   }
 }
