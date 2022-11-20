@@ -138,6 +138,8 @@ call plug#end()
 
 " alias to show coc-explorer
 nnoremap <space>n :TagbarToggle<CR>:<Cmd>CocCommand explorer<CR><CR>
+nnoremap <space>oe <Cmd>CocCommand explorer<CR><CR>
+nnoremap <space>ot :TagbarToggle<CR>
 
 " alias to ctags
 nnoremap <C-]> g<C-]>
