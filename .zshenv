@@ -19,7 +19,8 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 if command -v npm 1>/dev/null 2>&1; then
-  export PATH=$PATH:`npm bin --location=global`
+  # export PATH=$PATH:`npm bin --location=global`
+  export PATH="$(npm prefix -g)/bin:$PATH"
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"

@@ -37,7 +37,7 @@ set clipboard+=unnamedplus
 
 " prevent indent when paste
 imap <F5> <nop>
-set pastetoggle=<F5>
+" set pastetoggle=<F5>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " amount of spaces inerted automatically
@@ -53,6 +53,8 @@ set autoread
 
 " syntax on
 " filetype off
+
+let g:python3_host_prog = '~/.pyenv/shims/python3'
 
 autocmd ColorScheme * highlight Search ctermfg=15 ctermbg=21 guifg=wheat guibg=peru
 
@@ -120,7 +122,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ymyzk/vim-copl'
 
   " language server
-  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+  " Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 call plug#end()
 
 " :let g:org_export_emacs="/usr/local/Cellar/emacs/24.4/Emacs.app/Contents/MacOS/Emacs"
