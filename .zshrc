@@ -213,3 +213,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 . "$HOME/.local/bin/env"
+
+
+# Added by Antigravity CLI installer
+export PATH="$HOMW/.local/bin:$PATH"
