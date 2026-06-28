@@ -216,4 +216,4 @@ eval "$(pyenv init -)"
 
 
 # Added by Antigravity CLI installer
-export PATH="$HOMW/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
