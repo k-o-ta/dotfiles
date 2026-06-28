@@ -197,7 +197,7 @@ alias ocaml="rlwrap ocaml"
 
 alias tmux="TERM=screen-256color-bce tmux"
 
-alias aws='docker run --rm -it -e TZ=Asia/Tokyo -v ~/.aws:/root/.aws afterjnih2/aws-cli'
+# alias aws='docker run --rm -it -e TZ=Asia/Tokyo -v ~/.aws:/root/.aws afterjnih2/aws-cli'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR=$HOME/.sdkman
@@ -211,3 +211,5 @@ eval "$(direnv hook zsh)"
 # pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+. "$HOME/.local/bin/env"
